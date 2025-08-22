@@ -83,31 +83,14 @@
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23FFD700" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
         }
 
-        .carousel {
-            overflow: hidden;
+        .bounce-number {
+            animation: bounceNumber 1.5s infinite;
         }
         
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        
-        .carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
-        }
-
-        @media (min-width: 768px) {
-            .carousel-track {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-                transform: none !important;
-            }
-            
-            .carousel-slide {
-                min-width: auto;
-            }
+        @keyframes bounceNumber {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-4px); }
+            60% { transform: translateY(-2px); }
         }
     </style>
 </head>
@@ -188,54 +171,39 @@
                 Most Popular Games
             </h2>
             
-            <div class="carousel mb-12">
-                <div class="carousel-track" id="carouselTrack">
-                    <div class="carousel-slide">
-                        <div class="group relative overflow-hidden rounded-2xl luxury-shadow hover:scale-105 transition-transform duration-300 mx-4 md:mx-0">
-                            <img src="https://www.tys824ba.online/img2/5.jpg" 
-                                 alt="Flying Game" 
-                                 class="w-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 right-4 text-center">
-                                <h3 class="text-xl font-bold text-gold-300 mb-2">Flying</h3>
-                                <p class="text-gray-300 text-sm">High-stakes aerial adventure</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="group relative overflow-hidden rounded-2xl luxury-shadow hover:scale-105 transition-transform duration-300 mx-4 md:mx-0">
-                            <img src="https://www.tys824ba.online/img2/6.jpg" 
-                                 alt="Dragon Tiger" 
-                                 class="w-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 right-4 text-center">
-                                <h3 class="text-xl font-bold text-gold-300 mb-2">Dragon Tiger</h3>
-                                <p class="text-gray-300 text-sm">Classic card battle</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="group relative overflow-hidden rounded-2xl luxury-shadow hover:scale-105 transition-transform duration-300 mx-4 md:mx-0">
-                            <img src="https://www.tys824ba.online/img2/7.jpg" 
-                                 alt="Card Games" 
-                                 class="w-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 right-4 text-center">
-                                <h3 class="text-xl font-bold text-gold-300 mb-2">Card Games</h3>
-                                <p class="text-gray-300 text-sm">Premium card experience</p>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="group relative overflow-hidden rounded-2xl luxury-shadow hover:scale-105 transition-transform duration-300 mx-auto">
+                    <img src="https://www.tys824ba.online/img2/5.jpg" 
+                         alt="Flying Game" 
+                         class="w-[200px] h-[325px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                        <h3 class="text-xl font-bold text-gold-300 mb-2">Flying</h3>
+                        <p class="text-gray-300 text-sm">High-stakes aerial adventure</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Carousel Navigation (Mobile Only) -->
-            <div class="flex justify-center space-x-2 mb-8 md:hidden">
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-400" onclick="showSlide(0)"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-400" onclick="showSlide(1)"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-400" onclick="showSlide(2)"></button>
+                
+                <div class="group relative overflow-hidden rounded-2xl luxury-shadow hover:scale-105 transition-transform duration-300 mx-auto">
+                    <img src="https://www.tys824ba.online/img2/6.jpg" 
+                         alt="Dragon Tiger" 
+                         class="w-[200px] h-[325px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                        <h3 class="text-xl font-bold text-gold-300 mb-2">Dragon Tiger</h3>
+                        <p class="text-gray-300 text-sm">Classic card battle</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl luxury-shadow hover:scale-105 transition-transform duration-300 mx-auto">
+                    <img src="https://www.tys824ba.online/img2/7.jpg" 
+                         alt="Card Games" 
+                         class="w-[200px] h-[325px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                        <h3 class="text-xl font-bold text-gold-300 mb-2">Card Games</h3>
+                        <p class="text-gray-300 text-sm">Premium card experience</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Features -->
@@ -272,6 +240,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Telegram Icon -->
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
+        <div class="relative cursor-pointer" onclick="m2()">
+            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 luxury-shadow">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 2.1 11.75c-1.21-.35-1.22-1.18.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.75l-3.62 17.05c-.26 1.15-1.01 1.43-2.05.89l-5.7-4.2-2.75 2.65c-.3.3-.56.56-1.15.56z"/>
+                </svg>
+            </div>
+            <div class="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                <span class="text-white text-xs font-bold bounce-number">1</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating Bottom Button -->
     <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%]">
@@ -340,6 +322,11 @@
 
         // Button click handler
         function k2() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        // Telegram icon click handler
+        function m2() {
             window.open('https://www.qq.com', '_blank');
         }
     </script>
